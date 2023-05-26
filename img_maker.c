@@ -17,10 +17,11 @@ struct chip {
 	{"rk31", 0x33313241}, /* default to RK3128 */
 	{"rk32", 0x80},
 	{"rk33", 0x33333043}, /* default to RK3399 */
+	{"rv1126", 0x31313236}, /* default to RV1126 */
 	{NULL, 0x00},
 };
 
-unsigned int chiptype = 0x80;	/* default to RK3288 */
+unsigned int chiptype = 0x31313236;	/* default to RV1126 */
 
 unsigned int import_data(const char* infile, void *head, size_t head_len, FILE *fp)
 {
@@ -198,8 +199,9 @@ chiptype:\n\
     -rk31\n\
     -rk32\n\
     -rk33\n\
+    -rv1126\n\
 \n\
-If chiptype is missing, it is default to -rk32.\n\n\
+If chiptype is missing, it is default to -rv1126.\n\n\
 ");
 }
 
