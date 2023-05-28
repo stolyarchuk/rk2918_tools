@@ -128,7 +128,7 @@ int pack_rom(const char *loader_filename, const char *image_filename, const char
 	if (1 != fwrite(buffer, 0x66, 1, fp))
 		goto pack_fail;
 
-/*
+
 	printf("rom version: %x.%x.%x\n",
 		(rom_header.version >> 24) & 0xFF,
 		(rom_header.version >> 16) & 0xFF,
@@ -139,7 +139,7 @@ int pack_rom(const char *loader_filename, const char *image_filename, const char
 		rom_header.hour, rom_header.minute, rom_header.second);
 
 	printf("chip: %x\n", rom_header.chip);
-*/
+
 	fseek(fp, rom_header.loader_offset, SEEK_SET);
 	fprintf(stderr, "generate image...\n");
 	rom_header.loader_length = import_data(loader_filename, &loader_header, sizeof(loader_header), fp);
